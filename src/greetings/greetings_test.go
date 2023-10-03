@@ -1,9 +1,13 @@
-package greetings
+package greetings_test
 
-import "testing"
+import (
+    "testing"
+
+    "github.com/stretchr/testify/assert"
+
+    "github.com/example/module/src/greetings"
+)
 
 func TestGreeting(t *testing.T) {
-    if Greeting() == "" {
-        panic("Greeting failed to produce a result")
-    }
+    assert.NotEqual(t, greetings.Greeting(), "")
 }
